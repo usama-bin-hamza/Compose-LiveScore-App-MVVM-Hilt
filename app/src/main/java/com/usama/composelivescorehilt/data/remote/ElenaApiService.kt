@@ -6,18 +6,12 @@ import com.usama.composelivescorehilt.util.GET_INPLAY_FIXTURES
 import com.usama.composelivescorehilt.util.GET_UPCOMING_MATCHES
 import dagger.Provides
 import retrofit2.http.GET
+interface ElenaApiService {
 
-class ElenaApiService {
+    //        @Provides
+    @GET(GET_INPLAY_FIXTURES)
+    suspend fun getInplayMatches(): InplayMatchesResponse
 
-
-    interface ElenaApiService {
-
-        @Provides
-        @GET(GET_INPLAY_FIXTURES)
-        suspend fun getInplayMatches(): InplayMatchesResponse
-
-        @GET(GET_UPCOMING_MATCHES)
-        suspend fun getUpcomingMatches(): UpcomingMatchesResponse
-    }
-
+    @GET(GET_UPCOMING_MATCHES)
+    suspend fun getUpcomingMatches(): UpcomingMatchesResponse
 }

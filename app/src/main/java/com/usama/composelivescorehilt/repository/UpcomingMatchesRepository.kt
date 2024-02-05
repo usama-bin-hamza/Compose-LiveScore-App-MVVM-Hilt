@@ -10,7 +10,7 @@ import javax.inject.Inject
 
 //@Module
 //@InstallIn(ViewModelComponent::class)
-class UpcomingMatchesRepository @Inject constructor(private val elenaApiService: ElenaApiService.ElenaApiService) {
+class UpcomingMatchesRepository @Inject constructor(private val elenaApiService: ElenaApiService) {
 
 //    @Provides
     suspend fun getAllUpcomingMatches(): List<Match> = elenaApiService.getUpcomingMatches().data

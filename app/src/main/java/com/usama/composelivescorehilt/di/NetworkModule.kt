@@ -26,7 +26,7 @@ object NetworkModule {
             .build()
     }
 
-    @Singleton
+//    @Singleton
     @Provides
     fun retrofit(okHttpClient: OkHttpClient): Retrofit {
         return Retrofit.Builder()
